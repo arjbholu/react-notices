@@ -52,7 +52,6 @@ class Provider extends React.Component {
       isActive: this.isActive,
       isQueued: this.isQueued,
       notice: this.notice,
-      remove: this.remove,
       clear: this.clear,
       $queue: queue,
       $active: active
@@ -129,18 +128,6 @@ class Provider extends React.Component {
   }
 
   clear () {
-    const { active } = this.state
-
-    const timeouts = (
-      active.map(({ timeout }) => (
-        timeout
-      ))
-    )
-
-    timeouts.forEach(timeout => (
-      clearTimeout(timeout)
-    ))
-
     this.setState({
       queue: [],
       active: []
