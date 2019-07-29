@@ -36,6 +36,14 @@ $notice-color-danger:#fff !default;
     box-shadow:0 2px 4px rgba(0, 0, 0, .15);
     color:$notice-color-normal;
 
+    &.state-closeable {
+      cursor:pointer;
+
+      * {
+        cursor:inherit;
+      }
+    }
+
     &.display-info, &.display-warning, &.display-danger {
       text-shadow:0 1px 0 rgba(0, 0, 0, .25);
     }
