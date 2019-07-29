@@ -1,0 +1,63 @@
+{
+  "name": "@ninetynine/react-notices",
+  "version": "1.0.0-rc.1",
+  "description": "Simple react notices",
+  "main": "src/index.js",
+  "scripts": {
+    "prepublishOnly": "npm ru build",
+    "build": "node ./node_modules/@babel/cli/bin/babel src/ --out-dir dist/  --copy-files && node ./node_modules/node-sass/bin/node-sass src/ -o dist/",
+    "lint": "standard",
+    "fix": "standard --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "npm run lint"
+      ]
+    }
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
+  },
+  "keywords": [
+    "react",
+    "notices",
+    "alerts",
+    "context"
+  ],
+  "author": "Dexter Marks-Barber <dexter@marks-barber.co.uk>",
+  "license": "LGPL-3.0-only",
+  "homepage": "https://github.com/ninetynine/react-notices#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninetynine/react-notices.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ninetynine/react-notices/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-preset-minify": "^0.5.0",
+    "husky": "^3.0.2",
+    "node-sass": "^4.12.0",
+    "standard": "^13.1.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@ninetynine/noop": "^1.1.1",
+    "classnames": "^2.2.6",
+    "framer-motion": "^1.4.0",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  }
+}
