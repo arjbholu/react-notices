@@ -46,18 +46,18 @@ $notice-color-danger:#fff !default;
     }
 
     &.display-info {
-      background:$notice-background-light;
-      color:$notice-color-light;
+      background:$notice-background-info;
+      color:$notice-color-info;
     }
 
     &.display-warning {
-      background:$notice-background-light;
-      color:$notice-color-light;
+      background:$notice-background-warning;
+      color:$notice-color-warning;
     }
 
     &.display-danger {
-      background:$notice-background-light;
-      color:$notice-color-light;
+      background:$notice-background-danger;
+      color:$notice-color-danger;
     }
   }
 }
