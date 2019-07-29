@@ -1,10 +1,10 @@
 {
   "name": "@ninetynine/react-notices",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "description": "Simple react notices",
   "main": "dist/index.js",
   "scripts": {
-    "prepublishOnly": "npm ru build",
+    "prepublishOnly": "npm run build",
     "build": "node ./node_modules/@babel/cli/bin/babel src/ --out-dir dist/  --copy-files && node ./node_modules/node-sass/bin/node-sass src/ -o dist/",
     "lint": "standard",
     "fix": "standard --fix"
