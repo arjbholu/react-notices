@@ -26,6 +26,27 @@ $notice-color-danger:#fff !default;
   right:$gutter-half;
   padding:0;
 
+  &[class*='top-'] {
+    top:$gutter-half;
+    bottom:auto;
+  }
+
+  &.display-top-center, &.display-bottom-ceter {
+    left:50%;
+    transform:translateX(-50%);
+  }
+
+  &.display-top-left, &.display-bottom-left,
+  &.display-left-center {
+    left:$gutter-half;
+    right:auto;
+  }
+
+  &.display-top-right, &.display-bottom-right,
+  &.display-right-center {
+    right:$gutter-half;
+  }
+
   .notice {
     display:block;
     position:relative;

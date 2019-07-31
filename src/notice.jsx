@@ -5,6 +5,8 @@ import classNames from 'classnames'
 import { motion, AnimatePresence } from 'framer-motion'
 import fn from '@ninetynine/noop'
 
+import { animationForPosition } from './animations'
+
 class Notice extends React.Component {
   constructor (props) {
     super(props)
@@ -46,11 +48,12 @@ class Notice extends React.Component {
   }
 
   get animations () {
-    const { animations } = this.props
+    const { animations, position } = this.props
+    const defaultAnimations = animationForPosition(position)
 
     return (
       Object.assign(
-        {}, Notice.animations, animations
+        {}, defaultAnimations, animations
       )
     )
   }
@@ -118,22 +121,6 @@ class Notice extends React.Component {
   }
 }
 
-Notice.animations = {
-  init: {
-    opacity: 0,
-    top: 20
-  },
-  visible: {
-    opacity: 1,
-    top: 0,
-    right: 0
-  },
-  hidden: ({ width }) => ({
-    opacity: 0,
-    right: -width
-  })
-}
-
 Notice.defaultProps = {
   closeable: true,
   timeout: 2000,
@@ -158,7 +145,12 @@ Notice.propTypes = {
   theme: PropTypes.oneOf([
     'light', 'info', 'warning', 'danger'
   ]),
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  position: PropTypes.oneOf([
+    'top', 'top left', 'top right',
+    'bottom', 'bottom left', 'bototm right',
+    'left', 'right'
+  ])
 }
 
 export default Notice
