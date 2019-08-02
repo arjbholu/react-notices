@@ -104,7 +104,7 @@ class Notice extends React.Component {
             className={this.className}
             onClick={this.onClick}
             custom={{ width }}
-            variants={Notice.animations}
+            variants={this.animations}
             transition={{
               ease: 'easeInOut',
               duration: 0.2

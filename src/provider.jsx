@@ -185,7 +185,7 @@ class Provider extends React.Component {
     return (
       ReactDOM.createPortal(
         (
-          <div className={'notice-container'}>
+          <div className={this.className}>
             {active.map(({ key, ...notice }) => (
               <Notice
                 key={key}
