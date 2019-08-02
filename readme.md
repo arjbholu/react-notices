@@ -135,6 +135,7 @@ The `Provider` can be given two props:
 
 * `maxAlerts`
 * `eventLoop`
+* `position`
 
 ###### `maxAlerts`
 
@@ -143,6 +144,22 @@ This defines how many notices will be shown at once, by default this is `1`.
 ###### `eventLoop`
 
 This defines how often the `Provider` checks for queue updates, by default this is `500`.
+
+###### `position`
+
+This defines where the notices will be displayed within the viewport, by default this is `bottom right`.
+Use the following options to change the position of the notices:
+
+* `top`
+* `bottom`
+* `left`
+* `right`
+* `top left`
+* `top right`
+* `bottom left`
+* `bottom right`
+
+Each position has it's own animations. These can still be overriden by using the `animations` prop on a `notice`
 
 ##### `Notice`
 
