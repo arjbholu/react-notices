@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 import Context from './context'
 import Notice from './notice'
@@ -58,6 +59,26 @@ class Provider extends React.Component {
     }
   }
 
+  get className () {
+    const { position } = this.props
+    let posClass = position
+
+    if (!posClass.includes(' ')) {
+      posClass += ' center'
+    }
+
+    posClass = posClass.replace(' ', '-')
+
+    return (
+      classNames([
+        'notice-container',
+        {
+          [`display-${posClass}`]: position
+        }
+      ])
+    )
+  }
+
   isQueued (key) {
     const { queue } = this.state
     const index = (
@@ -110,12 +131,15 @@ class Provider extends React.Component {
 
   queue (notice) {
     const { queue } = this.state
+    const { position } = this.props
+
     const newQueue = [...queue]
 
     const toQueue = {
       key: Math.random().toString(36).substring(7),
       ...Notice.defaultProps,
-      ...notice
+      ...notice,
+      position
     }
 
     newQueue.push(toQueue)
@@ -192,12 +216,18 @@ class Provider extends React.Component {
 
 Provider.defaultProps = {
   maxActive: 1,
-  eventLoop: 500
+  eventLoop: 500,
+  position: 'bottom right'
 }
 
 Provider.propTypes = {
   maxActive: PropTypes.number,
-  eventLoop: PropTypes.number
+  eventLoop: PropTypes.number,
+  position: PropTypes.oneOf([
+    'top', 'top left', 'top right',
+    'bottom', 'bottom left', 'bottom right',
+    'left', 'right'
+  ])
 }
 
 export default Provider
