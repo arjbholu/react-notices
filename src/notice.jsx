@@ -143,7 +143,7 @@ Notice.propTypes = {
     ])
   }),
   theme: PropTypes.oneOf([
-    'light', 'info', 'warning', 'danger'
+    'light', 'info', 'warning', 'danger', 'success'
   ]),
   onClose: PropTypes.func,
   position: PropTypes.oneOf([

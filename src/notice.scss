@@ -19,6 +19,9 @@ $notice-color-warning:#fff !default;
 $notice-background-danger:#f03e3e !default;
 $notice-color-danger:#fff !default;
 
+$notice-background-success:#65b34d !default;
+$notice-color-success:#fff !default;
+
 .notice-container {
   position:absolute;
   margin:0;
@@ -87,6 +90,11 @@ $notice-color-danger:#fff !default;
     &.display-danger {
       background:$notice-background-danger;
       color:$notice-color-danger;
+    }
+
+    &.display-success {
+      background:$notice-background-success;
+      color:$notice-color-success;
     }
   }
 }
